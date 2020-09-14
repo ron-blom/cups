@@ -47,7 +47,7 @@ spec:
         - name: google-cloud-print-sidecar
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "blomron/google-cloud-print-connector:latest"
+          image: "blomron/google-cloud-print-sidecar:latest"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["sleep","infinity"]
           resources:
