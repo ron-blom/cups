@@ -49,7 +49,7 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "blomron/google-cloud-print-sidecar:latest"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["sleep","infinity"]
+          # command: ["sleep","infinity"]
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
