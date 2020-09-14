@@ -1,5 +1,5 @@
 FROM golang:1-stretch
-LABEL maintainer "Kyle Lucy <kmlucy@gmail.com>"
+LABEL maintainer "Ron Blom <blom.ron at gmail.com>"
 
 RUN mkdir /config \
   && apt-get update \
@@ -14,24 +14,3 @@ ADD avahi-daemon.conf /etc/avahi/avahi-daemon.conf
 ADD entrypoint.sh /opt/entrypoint.sh
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
-
-# FROM alpine
-# # FROM golang:alpine
-# # FROM debian:stretch-slim
-
-
-# ADD entrypoint.sh /opt/entrypoint.sh
-
-# RUN apk add --no-cache avahi augeas && \
-#     mkdir -p /go/bin && \
-#     chmod +x /opt/entrypoint.sh
-
-# # COPY --from=build /go /go
-
-
-# ENTRYPOINT ["/opt/entrypoint.sh"]
-
-
-# VOLUME /config
-
-# CMD gcp-cups-connector -config-filename /config/gcp-cups-connector.config.json --log-to-console
